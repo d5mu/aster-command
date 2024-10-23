@@ -1,0 +1,27 @@
+command /aster [<string>] [<player>] [<string>]:
+	trigger:
+		if player's name is "d5mu" or "ego_29" or "BS817":
+		# 데무는 이장은 아니지만 테스트가 필요해서 불가피하게 넣었읍니다
+			if arg 1 is "tp":
+				if arg 2 is not set:
+					message "특정 아스터 멤버에게 순간이동할 수 있습니다." and "&c야생 월드에서 악이용 하면 안 돼요!"
+				else if arg 2 is "d5mu" or "iru064766" or "rodotsian" or "ansqkf2" or "jinny0913":
+					teleport player to arg 2's location
+					message "성공적으로 &a%arg 2%&f 에게 순간이동 했습니다!" to player
+					
+					
+			if arg 1 is "reject":
+				message "&a%arg 2% 님의 의견을 기각하였습니다!" to player
+				if arg 3 is set:
+					send title "&a기각!" with subtitle arg 3 to arg 2
+				else:
+					send title "&a기각!" with subtitle "" to arg 2
+				play sound "entity.generic.explode" with volume 2 and pitch 1.2 to arg 2
+				damage arg 2 by 2
+				
+		else:
+			message "&c이장 권한을 갖고 있지 않습니다." to player
+			
+			
+				
+
